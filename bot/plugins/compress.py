@@ -199,7 +199,7 @@ async def parser(name):
      string = string + f'{anime} '   
    else:
     anime = ''
-   string = string + '[@FIERCENETWORK]' 
+   string = string + '[@CartoonandAnimeTelugu]' 
    return string 
 
 async def download_video(download, reply):
