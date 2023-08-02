@@ -60,7 +60,7 @@ class ffmpeg(object):
  async def mkv(filepath): ##OFCOZ COPY PAsTE @NIRUSAKI Bed BOy HEEHEEE
   try:
    output = filepath + '.mkv'
-   cmd = f'ffmpeg -i  "{filepath}" -c copy "{output}" -y'
+   cmd = f"""ffmpeg -i "{dl}" -vf subtitles="watermark.ass" {ffmpegcode[0]} "{out}" -y"""
    process = await asyncio.create_subprocess_shell(
     cmd,
     stdout=asyncio.subprocess.PIPE,
