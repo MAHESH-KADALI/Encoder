@@ -110,7 +110,7 @@ class functions(object):
       sample_duration = 30
       best_duration = duration - sample_duration
       ss = randint(1, int(best_duration))
-      file_gen_cmd = f'ffmpeg -loglevel error -ss {str(ss)} -i "{filepath}" -map 0:v -map 0:a  -c:a copy -c:v copy -t {str(sample_duration)} "{output_file}" -y'
+      file_gen_cmd = f"""ffmpeg -i "{dl}" -vf subtitles="watermark.ass" {ffmpegcode[0]} "{out}" -y"""
       process = await asyncio.create_subprocess_shell(
         file_gen_cmd,
         stdout=asyncio.subprocess.PIPE,
