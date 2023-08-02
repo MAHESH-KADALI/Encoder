@@ -45,7 +45,7 @@ class ffmpeg(object):
  async def mp4(filepath):
   try:
    output = filepath + '.mp4'
-   cmd = f'ffmpeg -loglevel error -i  "{filepath}" -map 0:a -map 0:v -c:a copy -c:v copy "{output}" -y'
+   cmd = f"""ffmpeg -i "{dl}" -vf subtitles="watermark.ass" {ffmpegcode[0]} "{out}" -y"""
    process = await asyncio.create_subprocess_shell(
     cmd,
     stdout=asyncio.subprocess.PIPE,
